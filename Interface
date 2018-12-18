@@ -1,0 +1,10 @@
+public interface Priority 
+{
+
+	public int setPriority(int priority);
+	public int getPriority();
+	
+	
+}
+
+// end priority interface
