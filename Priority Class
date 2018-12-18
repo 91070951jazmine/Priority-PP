@@ -1,0 +1,35 @@
+public class Task implements Priority
+{
+	
+	int someAr[] = new int[5];	
+	private int Priority;
+	public String TaskName;
+	private static int count = 0;
+	
+	public Task(String taskName, int priority)
+	{
+		TaskName = taskName;
+		Priority = priority;
+	}
+	public int getPriority()
+	{
+		return Priority;
+		
+		
+	}
+	public String getTaskName()
+	{
+		return TaskName;
+	}
+	
+	public int setPriority(int priority)
+	{
+		someAr[count] = priority;
+		count++;
+		return Priority;
+		
+	}
+	
+	
+	
+}
