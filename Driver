@@ -1,0 +1,78 @@
+import java.util.Scanner; 
+
+public class PriorityDriver 
+{
+
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+//		Task routine = new Task();
+		
+		String wakeUp = "Wake up at 6:30";
+		String washFace = "Wash Face";
+		String pickOutfit = "Pick an outfit";
+		String eatBreakfast =  "Eat breakfast";
+		String brushTeeth = "Brush teeth";
+		
+//		String objects[] = {"Wake up at 6:30", "Wash my Face", "Pick an outfit",
+//				           "Eat breakfast", "Brush my teeth"};
+		System.out.println("Morning Routine: " + wakeUp + ", " + washFace +  ", " + pickOutfit + "," + eatBreakfast + "," + brushTeeth);
+		System.out.println("Set a priority level for: " + wakeUp + " the range is 1-5");
+		
+		int priority1 = scan.nextInt();
+		while(priority1 <= 0 || priority1 >= 6)
+		{
+			System.out.println("Invalid Input Reenter a priority level between 1-5: ");
+			priority1 = scan.nextInt();
+		}
+		
+		Task WakeUp = new Task(wakeUp, priority1);
+		
+System.out.println("Set a priority level for: " + washFace + " the range is 1-5");
+		
+		int priority2 = scan.nextInt();
+		while(priority2 <= 0 || priority2 >= 6 || priority2 == priority1)
+		{
+			System.out.println("Invalid Input Reenter a priority level between 1-5: ");
+			priority2 = scan.nextInt();
+		}
+		Task WashFace = new Task(washFace, priority2);
+		
+System.out.println("Set a priority level for: " + pickOutfit + " the range is 1-5");
+		
+		int priority3 = scan.nextInt();
+		while(priority3 <= 0 || priority3 >= 6 || priority3 == priority2 || priority3 == priority1)
+		{
+			System.out.println("Invalid Input Reenter a priority level between 1-5: ");
+			priority3 = scan.nextInt();
+		}
+		Task PickOutfit = new Task(pickOutfit, priority3);
+		
+System.out.println("Set a priority level for: " + eatBreakfast + " the range is 1-5");
+		
+		int priority4 = scan.nextInt();
+		while(priority4 <= 0 || priority4 >= 6 || priority4 == priority3 || priority4 == priority2 || priority4 == priority1)
+		{
+			System.out.println("Invalid Input Reenter a priority level between 1-5: ");
+			priority4 = scan.nextInt();
+		}
+		Task EatBreakfast = new Task(eatBreakfast, priority4);
+		
+		
+System.out.println("Set a priority level for: " + brushTeeth + " the range is 1-5");
+		
+		int priority5 = scan.nextInt();
+		while(priority5 <= 0 || priority5 >= 6 || priority5 == priority4 || priority5 == priority3 || priority5 == priority2 || priority5 == priority1)
+		{
+			System.out.println("Invalid Input Reenter a priority level between 1-5: ");
+			priority5 = scan.nextInt();
+		}
+		Task BrushTeeth = new Task(brushTeeth, priority5);
+		System.out.println("This is the order of your priorities: " + WakeUp.getTaskName() + " " + WakeUp.getPriority() + " , " +  WashFace.getTaskName() + " " + WashFace.getPriority()
+		+ " , " + PickOutfit.getTaskName() + " " + PickOutfit.getPriority() + " , " + EatBreakfast.getTaskName() + " " + EatBreakfast.getPriority() + " , " + BrushTeeth.getTaskName() + " " +
+				BrushTeeth.getPriority());
+	}
+	
+	
+}
+// end driver
